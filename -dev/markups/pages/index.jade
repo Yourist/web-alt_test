@@ -1,0 +1,101 @@
+extends ../main
+
+block title
+	| Watermark project. Team 2
+
+block content
+	article.content-wrapper.container
+		.work
+			.work__title
+				h1.work__header Генератор водяных знаков
+			.work__workplace
+				.work__img-block
+					.work__watermark-block
+						.work__watermark-wrapper
+
+		.control
+			a#download-link download
+			.control__title
+				h3.control__header Настройки
+			
+			form.form#form(method="post" action="php/watermark.php")
+				input(type="hidden" id="fileurl" name="fileurl" class="fileurl")
+				input(type="hidden" name="watermark")
+				input(type="hidden" name="opacity" id="opacity__input")
+				input(type="hidden" name="mode")
+				.form__group
+					.form__group-wrap
+						
+						label.form__title#original-image Исходное изображение
+						.form__file-box
+							input(type="text" id="main_img_name" class="form__input-img form__input-img-main" name="filename" placeholder="Image.png" readonly)
+							label.form__box-btn
+								input(type="file" class="form__fileupload" id="main_img" name="fileupload")
+						
+						.form__watermark-input-disabled.panel
+						label.form__title#watermark-image Водяной знак
+						.form__file-box
+							input(type="text" id="watermark-name" class="form__input-img form__input-img-watermark" name="filename" placeholder="Image.png" readonly disabled)
+							label.form__box-btn
+								input(type="file" class="form__fileupload" id="watermark" name="fileupload" disabled)
+						.next-arrow
+						
+					.form__group-wrap.position
+						.position-disabled.panel.panel
+						.position__btns
+							button(type="radio" class="position__btns position__btns-tessel" id="tessel" data-view="grid-mode")
+							button(type="radio" class="position__btns position__btns-location position__btns active" id="location" data-view="single-mode")
+						.position__title
+							label.form__title#position Положение
+						
+						.switch
+							ul.position__map
+								- for (var i = 0; i < 9; i++)
+									li.position__point
+								.position__tessel-map
+									ul.position__tessel-wrap
+											li.position__tessel-vertical
+											li.position__tessel-horizontal
+
+
+							.position__custom
+								.position__select
+									label.position__axis X
+									input(type="number" class="position__move moveX" id="moveX")
+									.position__move-btn-wrap
+										.position__move-btn.position__move-btn-up#upX
+										.position__move-btn.position__move-btn-down#downX
+								.position__select
+									label.position__axis Y
+									input(type="number" class="position__move moveY" id="moveY")
+									.position__move-btn-wrap
+										.position__move-btn.position__move-btn-up#upY
+										.position__move-btn.position__move-btn-down#downY
+
+							.position__tessel
+								.position__select
+									label.position__axis.position__axis-vertical
+									input(type="number" class="position__move vertical" id="vertical")
+									.position__move-btn-wrap
+										.position__move-btn.position__move-btn-up#UpVertical
+										.position__move-btn.position__move-btn-down#DownVertical
+								.position__select
+									label.position__axis.position__axis-horizontal
+									input(type="number" class="position__move horizontal" id="horizontal")
+									.position__move-btn-wrap
+										.position__move-btn.position__move-btn-up#upHorizontal
+										.position__move-btn.position__move-btn-down#downHorizontal
+						.next-arrow
+
+					.form__group-wrap.opacity-wrap
+						.opacity-disabled.panel
+						.opacity__title
+							label.form__title#transparency Прозрачность
+						.opacity__slider-wrap
+							.opacity__slider
+						.next-arrow
+						
+					.form__btn-wrap
+						.form__btn-disabled.panel
+						button.form__btn.form__btn-reset#reset(type="reset" disabled) Сброс
+						button.form__btn.form__btn-download#submit(type="submit" disabled) Скачать

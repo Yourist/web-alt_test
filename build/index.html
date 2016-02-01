@@ -1,0 +1,160 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Watermark project. Team 2</title>
+		<!--link(rel="shortcut icon" href="" type="image/x-icon")-->
+		<!--link(rel="icon" href="" type="image/x-icon")-->
+		<!-- SEO-->
+		<meta name="description" content="test">
+		<meta name="keywords" content="">
+		<meta name="author" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--styles-->
+		<link rel="stylesheet" type="text/css" href="css/main.css" media="screen, projection, print">
+		<!-- modernizr-->
+		<script src="/js/_vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+		<!--[if lt IE 8]>
+		<p class="chromeframe">Похоже, что ты используешь устаревший браузер, друг. Пожалуйста, <a href="http://browsehappy.com/">скачай новый браузер абсолютно бесплатно</a> или <a href="http://www.google.com/chromeframe/?redirect=true">активируй Google Chrome Frame</a></p>
+		<![endif]-->
+		<div class="wrapper">
+			<div class="maincontent">
+				<article class="content-wrapper container">
+					<div class="work">
+						<div class="work__title">
+							<h1 class="work__header">Генератор водяных знаков</h1>
+						</div>
+						<div class="work__workplace">
+							<div class="work__img-block">
+								<div class="work__watermark-block">
+									<div class="work__watermark-wrapper"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="control"><a id="download-link">download</a>
+						<div class="control__title">
+							<h3 class="control__header">Настройки</h3>
+						</div>
+						<form id="form" method="post" action="php/watermark.php" class="form">
+							<input type="hidden" id="fileurl" name="fileurl" class="fileurl">
+							<input type="hidden" name="watermark">
+							<input type="hidden" name="opacity" id="opacity__input">
+							<input type="hidden" name="mode">
+							<div class="form__group">
+								<div class="form__group-wrap">
+									<label id="original-image" class="form__title">Исходное изображение</label>
+									<div class="form__file-box">
+										<input type="text" id="main_img_name" name="filename" placeholder="Image.png" readonly class="form__input-img form__input-img-main">
+										<label class="form__box-btn">
+											<input type="file" id="main_img" name="fileupload" class="form__fileupload">
+										</label>
+									</div>
+									<div class="form__watermark-input-disabled panel"></div>
+									<label id="watermark-image" class="form__title">Водяной знак</label>
+									<div class="form__file-box">
+										<input type="text" id="watermark-name" name="filename" placeholder="Image.png" readonly disabled class="form__input-img form__input-img-watermark">
+										<label class="form__box-btn">
+											<input type="file" id="watermark" name="fileupload" disabled class="form__fileupload">
+										</label>
+									</div>
+									<div class="next-arrow"></div>
+								</div>
+								<div class="form__group-wrap position">
+									<div class="position-disabled panel panel"></div>
+									<div class="position__btns">
+										<button type="radio" id="tessel" data-view="grid-mode" class="position__btns position__btns-tessel"></button>
+										<button type="radio" id="location" data-view="single-mode" class="position__btns position__btns-location position__btns active"></button>
+									</div>
+									<div class="position__title">
+										<label id="position" class="form__title">Положение</label>
+									</div>
+									<div class="switch">
+										<ul class="position__map">
+											<li class="position__point"></li>
+											<li class="position__point"></li>
+											<li class="position__point"></li>
+											<li class="position__point"></li>
+											<li class="position__point"></li>
+											<li class="position__point"></li>
+											<li class="position__point"></li>
+											<li class="position__point"></li>
+											<li class="position__point"></li>
+											<div class="position__tessel-map">
+												<ul class="position__tessel-wrap">
+													<li class="position__tessel-vertical"></li>
+													<li class="position__tessel-horizontal"></li>
+												</ul>
+											</div>
+										</ul>
+										<div class="position__custom">
+											<div class="position__select">
+												<label class="position__axis">X</label>
+												<input type="number" id="moveX" class="position__move moveX">
+												<div class="position__move-btn-wrap">
+													<div id="upX" class="position__move-btn position__move-btn-up"></div>
+													<div id="downX" class="position__move-btn position__move-btn-down"></div>
+												</div>
+											</div>
+											<div class="position__select">
+												<label class="position__axis">Y</label>
+												<input type="number" id="moveY" class="position__move moveY">
+												<div class="position__move-btn-wrap">
+													<div id="upY" class="position__move-btn position__move-btn-up"></div>
+													<div id="downY" class="position__move-btn position__move-btn-down"></div>
+												</div>
+											</div>
+										</div>
+										<div class="position__tessel">
+											<div class="position__select">
+												<label class="position__axis position__axis-vertical"></label>
+												<input type="number" id="vertical" class="position__move vertical">
+												<div class="position__move-btn-wrap">
+													<div id="UpVertical" class="position__move-btn position__move-btn-up"></div>
+													<div id="DownVertical" class="position__move-btn position__move-btn-down"></div>
+												</div>
+											</div>
+											<div class="position__select">
+												<label class="position__axis position__axis-horizontal"></label>
+												<input type="number" id="horizontal" class="position__move horizontal">
+												<div class="position__move-btn-wrap">
+													<div id="upHorizontal" class="position__move-btn position__move-btn-up"></div>
+													<div id="downHorizontal" class="position__move-btn position__move-btn-down"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="next-arrow"></div>
+								</div>
+								<div class="form__group-wrap opacity-wrap">
+									<div class="opacity-disabled panel"></div>
+									<div class="opacity__title">
+										<label id="transparency" class="form__title">Прозрачность</label>
+									</div>
+									<div class="opacity__slider-wrap">
+										<div class="opacity__slider"></div>
+									</div>
+									<div class="next-arrow"></div>
+								</div>
+								<div class="form__btn-wrap">
+									<div class="form__btn-disabled panel"></div>
+									<button id="reset" type="reset" disabled class="form__btn form__btn-reset">Сброс</button>
+									<button id="submit" type="submit" disabled class="form__btn form__btn-download">Скачать</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</article>
+			</div>
+		</div>
+		<script src="/js/_vendors/jquery-1.11.3.min.js"></script>
+		<script src="js/plugins.min.js" defer></script>
+		<script src="js/main.min.js"></script>
+	</body>
+</html>

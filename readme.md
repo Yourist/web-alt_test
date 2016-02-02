@@ -1,10 +1,10 @@
-## Installation
+>>how to install
 
 required: ruby;
-
-gem install compass
-gem install sass-globbing
-npm install
-bower install
-gulp
+0. git clone 
+1. gem install compass
+2. gem install sass-globbing
+3. npm i
+4. bower i
+5. gulp
 

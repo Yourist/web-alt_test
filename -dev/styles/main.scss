@@ -1,25 +1,28 @@
 @import "compass";
 
+
+/* --------- mixins --------- */
+
+@import "misc/mixins";
+
 /* --------- normalize --------- */
 
 @import "misc/normalize";
 
 /* --------- plugins --------- */
 
+
 /* --------- fonts --------- */
 
-@import "misc/_fonts.scss";
-
-/* --------- mixins --------- */
-
-@import "misc/mixins";
+@import "misc/fonts";
 
 /* --------- adjustment --------- */
 
 @import "misc/adjustment";
 
-/* --------- sections --------- */
+/* --------- views --------- */
 
+@import "views/320px";
 
 /* --------- widgets --------- */
 

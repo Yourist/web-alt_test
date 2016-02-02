@@ -22,7 +22,7 @@ var
 		},
 
 		scss : {
-			location    : '-dev/styles/**/*.scss',
+			location    : '-dev/styles/main.scss',
 			entryPoint  : 'build/css/main.css'
 		},
 

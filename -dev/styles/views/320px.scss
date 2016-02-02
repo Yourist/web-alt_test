@@ -1,6 +1,7 @@
 @media (min-width: 320px) and (max-width: 479px) {
   .wrapper{
     padding: 5px;
+    background: red;
     }
   .header{
     width: 100%;
@@ -23,7 +24,7 @@
     }
   }
 
-
+  
   .content{
     width: 100%;
     &__face-img{

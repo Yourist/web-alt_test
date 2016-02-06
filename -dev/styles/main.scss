@@ -1,33 +1,13 @@
-@import "compass";
+@import "sprite/sprite";
 
+.list{
+  padding: 100px;
+}
 
-/* --------- mixins --------- */
+.item{
+  display: block;
+  @include sprite($a-13-);
 
-@import "misc/mixins";
+}
 
-/* --------- normalize --------- */
-
-@import "misc/normalize";
-
-/* --------- plugins --------- */
-
-
-
-/* --------- fonts --------- */
-
-@import "misc/fonts";
-
-/* --------- adjustment --------- */
-
-@import "misc/adjustment";
-
-/* --------- views --------- */
-
-@import "views/320px";
-
-/* --------- widgets --------- */
-
-
-
-/* ---------- fix ---------- */
 

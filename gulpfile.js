@@ -1,76 +1,77 @@
 /* --------- plugins --------- */
-
 var
 	gulp        = require('gulp'),
-	compass     = require('gulp-compass'),
-	jade        = require('gulp-jade'),
-	browserSync = require('browser-sync').create(),
-	browserify  = require('gulp-browserify'),
-	uglify      = require('gulp-uglify'),
-	rename      = require("gulp-rename"),
-	plumber     = require('gulp-plumber'),
-	concat      = require('gulp-concat');
+	jade        = require('gulp-jade'),//компилятор jade
+	browserSync = require('browser-sync').create(),//livereload + local server
+	uglify      = require('gulp-uglify'),//минификация js файлов
+	rename      = require("gulp-rename"),//переименовывание файлов
+	plumber     = require('gulp-plumber'),//Не дает галпу остановиться с ошибкой
+	concat      = require('gulp-concat'),//склеивание js файлов
+	sass        = require('gulp-sass'),//Компилятор sass файлов
+	spritesmith = require('gulp.spritesmith');//создание спрайтов
+
 
 /* --------- paths --------- */
 
 var
 	paths = {
-		jade : {
-			location    : '-dev/markups/**/*.jade',
-			compiled    : '-dev/markups/pages/*.jade',
-			destination : 'build'
+		build:{//файлы для выгрузки
+			html:        'dist/',
+			js:	         'dist/js',
+			css:         'dist/styles',
+			img:         'dist/img/main',
+			sprite:      'dist/img/sprite',
+			fonts:       'dist/fonts',
+			spritepath:  '../img/sprite/sprite.png'
 		},
-
-		scss : {
-			location    : '-dev/styles/**/*.scss',
-			entryPoint  : 'build/css/main.css'
+		dev:{//исходники
+			jade:      '-dev/markups/pages/*.jade',
+			js:        '-dev/js/**/*.js',
+			style:     '-dev/styles/main.scss',
+			sprite:    '-dev/img/sprite/**/*.*',
+			img:       '-dev/img/main/**/*.*',
+			spritimg:  '-dev/img/sprite',
+			spritescss:'-dev/styles/sprite',
+			fonts:     '-dev/fonts/**/*.*'
 		},
-
-		compass : {
-			configFile  : 'config.rb',
-			cssFolder   : 'build/css',
-			scssFolder  : '-dev/styles',
-			imgFolder   : 'build/img'
+		watch:{
+			jade: '-dev/markups/**/*.jade',
+			scss: '-dev/styles/**/*.scss',
+			js:   '-dev/js/**/*.js',
+			img:  '-dev/img/**/*.*',
+			fonts:'-dev/fonts/**/*.*'
 		},
-
-		js : {
-			location    : ['-dev/scripts/parameters.js', '-dev/scripts/_modules/*.js', '-dev/scripts/main.js'],
-			plugins     : '-dev/scripts/plugins/*.js',
-			destination : 'build/js'
+		browserSync: {
+			baseDir:'dist',
+			watchPaths: ['dist/**/*.*']
 		},
+		clean: 'dist',
+};
 
-		browserSync : {
-			baseDir : 'build/',
-			watchPaths : ['*.html', 'css/*.css', 'js/*.js']
-		}
-	}
 
 /* --------- jade --------- */
-
 gulp.task('jade', function() {
-	gulp.src(paths.jade.compiled)
+	gulp.src(paths.dev.jade)
 		.pipe(plumber())
 		.pipe(jade({
 			pretty: '\t',
 		}))
-		.pipe(gulp.dest(paths.jade.destination));
+		.pipe(gulp.dest(paths.build.html));
 });
-
-/* --------- scss-compass --------- */
-
-gulp.task('compass', function() {
-	gulp.src(paths.scss.location)
-		.pipe(plumber())
-		.pipe(compass({
-			config_file: paths.compass.configFile,
-			css: paths.compass.cssFolder,
-			sass: paths.compass.scssFolder,
-			image: paths.compass.imgFolder
-		}));
+/* --------- other --------- */
+gulp.task('other', function() {
+	gulp.src(paths.dev.fonts)
+		.pipe(gulp.dest(paths.build.fonts));
+	gulp.src(paths.dev.img)
+		.pipe(gulp.dest(paths.build.img));
 });
-
+/* --------- sass --------- */
+gulp.task('sass', function() {
+	gulp.src(paths.dev.style)
+		.pipe(sass().on('error',sass.logError))
+		.pipe(gulp.dest(paths.build.css));
+});
 /* --------- browser sync --------- */
-
 gulp.task('sync', function() {
 	browserSync.init({
 		server: {
@@ -78,37 +79,37 @@ gulp.task('sync', function() {
 		}
 	});
 });
-
 /* --------- plugins --------- */
-
-gulp.task('plugins', function() {
-	return gulp.src(paths.js.plugins)
-		.pipe(plumber())
-		.pipe(concat('plugins.min.js'))
-		.pipe(uglify())
-		.pipe(gulp.dest(paths.js.destination));
-});
-
-/* --------- plugins --------- */
-
 gulp.task('scripts', function() {
-	return gulp.src(paths.js.location)
+	return gulp.src(paths.dev.js)
 		.pipe(plumber())
 		.pipe(concat('main.min.js'))
-		//.pipe(uglify())
-		.pipe(gulp.dest(paths.js.destination));
+		.pipe(uglify())
+		.pipe(gulp.dest(paths.build.js));
 });
-
+/* --------- sprites --------- */
+gulp.task('sprite', function () {
+	var spriteData = gulp.src(paths.dev.sprite)
+		.pipe(spritesmith({
+			imgName: 'sprite.png',
+			cssName: 'sprite.scss',
+			padding: 70,
+			imgPath: paths.build.spritepath
+		}));
+	spriteData.img.pipe(gulp.dest(paths.build.sprite));
+	spriteData.css.pipe(gulp.dest(paths.dev.spritescss));
+});
 /* --------- watch --------- */
-
 gulp.task('watch', function(){
-	gulp.watch(paths.jade.location, ['jade']);
-	gulp.watch(paths.scss.location, ['compass']);
-	gulp.watch(paths.js.location, ['scripts']);
-	gulp.watch(paths.js.plugins, ['plugins']);
+	gulp.watch(paths.watch.jade, ['jade']);
+	gulp.watch(paths.watch.scss, ['sass']);
+	gulp.watch(paths.watch.js, ['scripts']);
 	gulp.watch(paths.browserSync.watchPaths).on('change', browserSync.reload);
 });
+/* --------- clean --------- */
+gulp.task('clean', function() {
 
+});
 /* --------- default --------- */
 
-gulp.task('default', ['jade', 'compass', 'plugins', 'scripts', 'sync', 'watch']);
+gulp.task('default', ['jade','other','sass','sync','scripts','sprite', 'watch']);

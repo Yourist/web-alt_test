@@ -1,6 +1,6 @@
 {
-  "name": "Web-alt",
-  "description": "test",
+  "name": "Name",
+  "description": "Desc",
   "main": "gulpfile.js",
   "authors": [
     "Leo Verkhovtsev"
@@ -14,8 +14,5 @@
     "bower_components",
     "test",
     "tests"
-  ],
-  "devDependencies": {
-    "medium-style-confirm": "~0.4.2"
-  }
+  ]
 }

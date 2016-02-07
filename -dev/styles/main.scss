@@ -1,13 +1,22 @@
+
+
+/* ------- sprite ------- */
 @import "sprite/sprite";
 
-.list{
-  padding: 100px;
-}
 
-.item{
-  display: block;
-  @include sprite($a-13-);
+/* ------- mics ------- */
+@import "misc/mixins.scss";
+@import "misc/adjustment.scss";
+@import "misc/fonts.scss";
+@import "misc/variables.scss";
 
-}
+
+/* ------- sections ------- */
+@import "sections/320px.scss";
+@import "sections/480px.scss";
+@import "sections/768px.scss";
+
+
+
 
 

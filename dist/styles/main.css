@@ -51,13 +51,14 @@ body {
   -webkit-font-smoothing: antialiased;
   width: 100%;
   height: 100% !important;
-  background: #f4f4f4; }
+  background: #f4f4f4;
+  padding: 0;
+  margin: 0; }
 
 .container {
   margin: 0 auto;
   position: relative;
-  padding: 0 15px;
-  width: 1105px; }
+  padding: 0 15px; }
   .container:before, .container:after {
     content: "";
     display: table; }
@@ -69,12 +70,10 @@ body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  overflow: hidden;
-  min-width: 1135px; }
+  overflow: hidden; }
   .wrapper:after {
     display: block;
-    position: relative;
-    height: 222px; }
+    position: relative; }
 
 table {
   border-collapse: collapse;
@@ -93,9 +92,7 @@ p {
   margin: 0; }
 
 footer {
-  position: relative;
-  min-width: 1135px;
-  height: 222px; }
+  position: relative; }
 
 .maincontent {
   margin-bottom: 29px; }
@@ -139,7 +136,7 @@ footer {
 @media (min-width: 320px) and (max-width: 479px) {
   .wrapper {
     padding: 5px;
-    background: red; }
+    background: #ffffff; }
   .header {
     width: 100%; }
     .header:before, .header:after {
@@ -155,11 +152,37 @@ footer {
       font-family: "playfair_displayregular"; }
     .header .horizontal-line {
       float: right;
-      width: 45%;
+      width: 44%;
       height: 2px;
       background: #000000;
       margin-top: 26px; }
   .content {
-    width: 100%; }
+    min-width: 310px;
+    min-height: 200px; }
     .content__face-img {
-      height: 200px; } }
+      display: inline-block;
+      height: 200px;
+      width: 100%;
+      background-image: url("../img/main/main320.png");
+      background-size: 100%;
+      background-repeat: no-repeat; }
+    .content__cur-data {
+      color: #000000;
+      background: #ffffff;
+      opacity: 0.8;
+      margin: 7px;
+      display: inline-block;
+      width: 30%;
+      text-align: center;
+      font-family: "noto_sansregular";
+      font-size: 18px; }
+    .content__cur-list {
+      display: block;
+      width: 100%; }
+    .content__cur-item {
+      display: inline-block;
+      width: 30%;
+      background-image: url(../img/sprite/sprite.png);
+      background-position: -230px 0px;
+      width: 160px;
+      height: 104px; } }

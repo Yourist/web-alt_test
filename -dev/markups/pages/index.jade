@@ -1,5 +1,7 @@
 extends ../main
 
+
+
 block title
     | Test
 
@@ -13,26 +15,26 @@ block content
             .content__cur-data 21 сентября
         ul.content__cur-list
             - for (var i = 0; i < 5; i++)
-            li.content__cur-item
+                li.content__cur-item
     .advert
     .photo
         .photo__data
         ul.photo__list
             - for (var i = 0; i < 5; i++)
-            li.photo__img__item
-                img.photo__img
+                li.photo__img__item
+                    img.photo__img
         .photo__data
         ul.photo__list
             - for (var i = 0; i < 5; i++)
-            li.photo__img__item
-                img.photo__img
+                li.photo__img__item
+                    img.photo__img
     footer.footer
         .pagination
             ul.pagination__list
                 - for(var i = 0; i < 3; i++)
-                li.pagination__item
-                    a(href="#").pagination__link
-                        .pagination__mark =i
+                    li.pagination__item
+                        a(href="#").pagination__link
+                            .pagination__mark
                 li.pagination__item.pagination__item-next
                     a(href="#").pagination__link
                         .pagination__mark Следующая

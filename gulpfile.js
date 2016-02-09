@@ -75,7 +75,8 @@ gulp.task('sass', function() {
 gulp.task('sync', function() {
 	browserSync.init({
 		server: {
-			baseDir: paths.browserSync.baseDir
+			baseDir: paths.browserSync.baseDir,
+			tunnel: 'mobilesite'
 		}
 	});
 });

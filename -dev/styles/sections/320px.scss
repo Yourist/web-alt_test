@@ -1,7 +1,7 @@
 @media (min-width: 320px) and (max-width: 479px) {
   .wrapper{
     padding: 5px;
-    background: red;
+    background: #ffffff;
     }
   .header{
     width: 100%;
@@ -17,7 +17,7 @@
     }
     .horizontal-line{
       float: right;
-      width: 45%;
+      width: 44%;
       height: 2px;
       background: #000000;
       margin-top: 26px;
@@ -26,9 +26,38 @@
 
 
   .content{
-    width: 100%;
+    min-width: 310px;
+    min-height: 200px;
     &__face-img{
+      display: inline-block;
       height: 200px;
+      width: 100%;
+      background-image: url("../img/main/main320.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+    &__cur-data{
+      color: #000000;
+      background: #ffffff;
+      opacity: 0.8;
+      margin: 7px;
+      display: inline-block;
+      width: 30%;
+      text-align: center;
+      font-family: $noto-sans-r;
+      font-size:18px;
+    }
+    &__cur-list{
+      display: block;
+      width: 100%;
+    }
+    &__cur-item{
+      display: inline-block;
+      width: 30%;
+      //-webkit-background-size:100%;
+     // background-size:100%;
+     // background-repeat:no-repeat;
+      @include sprite($a-1-);
     }
   }
 }

@@ -62,11 +62,19 @@ p {
   margin: 0;
 }
 
+h4{
+  text-align: center;
+  font-family: $noto-sans-r;
+  font-size: 18px;
+}
 footer {
   position: relative;
 
 }
+a{
+  text-decoration: none;
 
+}
 .maincontent {
   margin-bottom: 29px;
 }

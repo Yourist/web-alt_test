@@ -16,25 +16,30 @@ block content
         ul.content__cur-list
             - for (var i = 0; i < 5; i++)
                 li.content__cur-item
-    .advert
+                    img.content__cur-img
+    .advert-wrap
+        img(src="img/main/main320.png").advert
     .photo
-        .photo__data
+
         ul.photo__list
+            li.photo__data
+                h4 20 сентября
             - for (var i = 0; i < 5; i++)
-                li.photo__img__item
+                li.photo__item
                     img.photo__img
-        .photo__data
+
         ul.photo__list
-            - for (var i = 0; i < 5; i++)
-                li.photo__img__item
+            li.photo__data
+                h4 20 сентября
+            - for (var i = 0; i < 6; i++)
+                li.photo__item
                     img.photo__img
     footer.footer
         .pagination
             ul.pagination__list
-                - for(var i = 0; i < 3; i++)
+                - for(var i = 1; i < 4; i++)
                     li.pagination__item
-                        a(href="#").pagination__link
-                            .pagination__mark
+                        a(href="#").pagination__link=i
+
                 li.pagination__item.pagination__item-next
-                    a(href="#").pagination__link
-                        .pagination__mark Следующая
+                    a(href="#").pagination__link Следующая

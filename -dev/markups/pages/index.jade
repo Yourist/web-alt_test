@@ -11,35 +11,49 @@ block content
         .horizontal-line
 
     article.content
-        .content__face-img
-            .content__cur-data 21 сентября
-        ul.content__cur-list
-            - for (var i = 0; i < 5; i++)
-                li.content__cur-item
-                    img.content__cur-img
-    .advert-wrap
-        img(src="img/main/main320.png").advert
-    .photo
+        .content__face
+            img.content__face-img
+            .content__date-block
+                h3.content__date 21
+                span.content__month сентября
 
+    .photo
         ul.photo__list
-            li.photo__data
-                h4 20 сентября
             - for (var i = 0; i < 5; i++)
                 li.photo__item
                     img.photo__img
+        .adv-wrap
+            a.adv__link
+                img.adv
+                .adv__content
+                    span.adv__title Рекламный тизер
+                    h5 Театральная паутина
+                    p Открытие новых сервисных центров немецкого автопрома
+        ul.photo__list
+            li.photo__date
+                h4 20
+                span сентября
+                - for (var i = 0; i < 5; i++)
+                    li.photo__item
+                        img.photo__img
 
         ul.photo__list
-            li.photo__data
+            li.photo__date
                 h4 20 сентября
             - for (var i = 0; i < 6; i++)
                 li.photo__item
                     img.photo__img
     footer.footer
         .pagination
+            span.pagination__pages Страницы:
             ul.pagination__list
                 - for(var i = 1; i < 4; i++)
-                    li.pagination__item
-                        a(href="#").pagination__link=i
+                    if (i!=1)
+                        li.pagination__item
+                            a(href="#").pagination__link=i
+                    else
+                        li.pagination__item.pagination__item-active
+                            a(href="#").pagination__link=i
 
                 li.pagination__item.pagination__item-next
                     a(href="#").pagination__link Следующая

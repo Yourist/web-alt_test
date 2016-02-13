@@ -184,28 +184,27 @@ a {
       margin-bottom: 10px; }
     .content__date-block {
       position: absolute;
-      width: 10%;
-      height: 10%; }
-    .content__date {
+      width: 20%;
+      height: 25%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
       color: #000000;
       background: #ffffff;
       opacity: 0.8;
       margin: 7px;
       padding: 7px 10px;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-      display: inline-block;
-      width: 30%;
-      height: 30%;
+      text-align: center;
+      display: inline-block; }
+    .content__date {
       text-align: center;
       font-family: "noto_sansregular";
-      font-size: 18px;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0; }
+      font-size: 18px; }
+    .content__month {
+      font-size: 14px;
+      text-align: center; }
     .content__cur-list {
       display: block;
       width: 100%;
@@ -237,15 +236,20 @@ a {
       overflow: hidden;
       position: relative;
       display: block;
-      margin-bottom: 4%; }
+      margin-bottom: 4%;
+      overflow: hidden; }
     .adv__content {
       width: 220px;
       display: inline-block;
       font-family: "noto_sansregular";
-      font-size: 12px; }
-    .adv__title {
+      font-size: 12px;
+      height: 100%; }
+    .adv__name {
       color: #bebebe;
-      font-size: 10px; }
+      font-size: 10px;
+      display: block; }
+    .adv__title {
+      display: inline-block; }
   .photo {
     width: 100%;
     overflow: hidden; }

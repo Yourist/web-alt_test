@@ -42,30 +42,32 @@
     }
     &__date-block{
       position: absolute;
-      width: 10%;
-      height: 10%;
-
-    }
-    &__date {
+      width: 20%;
+      height: 25%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
       color: #000000;
       background: #ffffff;
       opacity: 0.8;
       margin: 7px;
       padding:7px 10px;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
+      text-align: center;
+      //-webkit-box-sizing: border-box;
+      //-moz-box-sizing: border-box;
+      //box-sizing: border-box;
       display: inline-block;
-      width: 30%;
-      height: 30%;
+    }
+    &__date {
       text-align: center;
       font-family: $noto-sans-r;
       font-size: 18px;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+    }
+    &__month{
+      font-size:14px;
+      text-align: center;
     }
     &__cur-list {
       display: block;
@@ -96,6 +98,7 @@
       position: relative;
       display: block;
       margin-bottom: 4%;
+      overflow: hidden;
     }
     width: 100px;
     height: 80px;
@@ -107,10 +110,15 @@
       display: inline-block;
       font-family:$noto-sans-r;
       font-size:12px;
+      height: 100%;
     }
-    &__title{
+    &__name{
       color: #bebebe;
       font-size:10px;
+      display: block;
+    }
+    &__title{
+      display: inline-block;
 
     }
 

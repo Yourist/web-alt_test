@@ -3,8 +3,10 @@
     padding: 5px;
     background: #ffffff;
   }
+
   .header {
     width: 100%;
+    margin-bottom: 10px;
     @include clearfix();
 
     &__title {
@@ -17,7 +19,7 @@
     }
     .horizontal-line {
       float: right;
-      width: 44%;
+      width: 38%;
       height: 2px;
       background: #000000;
       margin-top: 26px;
@@ -33,17 +35,17 @@
     &__face-img {
       display: inline-block;
       position: relative;
-      height: 200px;
+      height: 203px;
       width: 100%;
       background-image: url("../img/main/main320.png");
       background-size: cover;
       background-repeat: no-repeat;
-      margin-bottom: 10px;
+
     }
     &__date-block{
       position: absolute;
-      width: 20%;
-      height: 25%;
+      width: 19%;
+      height: 19%;
       top: 0;
       bottom: 0;
       left: 0;
@@ -64,26 +66,13 @@
       text-align: center;
       font-family: $noto-sans-r;
       font-size: 18px;
+      line-height:20px;
+      margin-bottom:-2px;
     }
     &__month{
       font-size:14px;
       text-align: center;
-    }
-    &__cur-list {
-      display: block;
-      width: 100%;
-      margin-left: -2%;
-
-    }
-    &__cur-item {
-      display: inline-block;
-      box-sizing: border-box;
-      margin-left: 2%;
-      margin-bottom: 2%;
-      width: 22%;
-      height: 22%;
-      position: relative;
-      overflow: hidden;
+      margin-left: -2px;
     }
     &__cur-img {
       display: inline-block;
@@ -91,26 +80,35 @@
     }
   }
   .adv {
+
+    &__link{
+      float: left;
+      display: block;
+    }
+
     &-wrap {
       width: 100%;
-      height: 90px;
+      height: 80px;
       overflow: hidden;
       position: relative;
       display: block;
       margin-bottom: 4%;
       overflow: hidden;
     }
+    float: left;
     width: 100px;
     height: 80px;
-    -webkit-background-size:100%;
-    background-size:100%;
+    -webkit-background-size: 100%;
+    background-size: 138%;
+    background-position-x: -5px;
+    background-position-y: -43px;
     background-image: url("../img/main/adv320.png");
     &__content{
-      width: 220px;
+      width: 67%;
       display: inline-block;
       font-family:$noto-sans-r;
       font-size:12px;
-      height: 100%;
+      float: left;
     }
     &__name{
       color: #bebebe;
@@ -127,29 +125,45 @@
   .photo {
     width: 100%;
     overflow: hidden;
-    &__data {
+
+    &__list {
+      width: 102%;
+      position: relative;
+      display: block;
+      margin-left: -5px;
+      margin-right: 0;
+      font-size:0;
+    }
+    &__link{
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    &__date {
       display: inline-block;
       box-sizing: border-box;
       margin-left: 2%;
-      margin-bottom: 2%;
-      width: 30%;
-      height: 30%;
+      margin-bottom: 3%;
+      width: 73px;
+      height: 48px;
       position: relative;
       overflow: hidden;
       padding:0 5px;
+      text-align: center;
+      background: lightgrey;
+      font-size:12px;
+
     }
-    &__list {
-      width: 100%;
-      position: relative;
-      display: block;
+    &__arrow{
+      float: right;
+      @include sprite($arrow);
     }
     &__item {
       display: inline-block;
       box-sizing: border-box;
-      margin-left: 2%;
-      margin-bottom: 2%;
-      width: 26%;
-      height: 30%;
+      margin-left: 6px;
+      margin-bottom: 5px;
       position: relative;
       overflow: hidden;
     }
@@ -171,15 +185,17 @@
     }
     &__item{
       display: inline-block;
-      height: 50px;
-      width: 50px;
+      height: 34px;
+      width: 34px;
       text-align: center;
-      padding-top: 3%;
+      padding-top: 6px;
       box-sizing: border-box;
       &-active{
         background: #e6e6e6;
-        opacity: 0,8;
+        opacity: 0,302;
         border-radius: 50%;
+        width: 34px;
+        height: 34px;
       }
       &-next{
         width: 30%;

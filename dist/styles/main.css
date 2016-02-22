@@ -150,7 +150,8 @@ a {
     padding: 5px;
     background: #ffffff; }
   .header {
-    width: 100%; }
+    width: 100%;
+    margin-bottom: 10px; }
     .header:before, .header:after {
       content: "";
       display: table; }
@@ -164,7 +165,7 @@ a {
       font-family: "playfair_displayregular"; }
     .header .horizontal-line {
       float: right;
-      width: 44%;
+      width: 38%;
       height: 2px;
       background: #000000;
       margin-top: 26px; }
@@ -176,16 +177,15 @@ a {
     .content__face-img {
       display: inline-block;
       position: relative;
-      height: 200px;
+      height: 203px;
       width: 100%;
       background-image: url("../img/main/main320.png");
       background-size: cover;
-      background-repeat: no-repeat;
-      margin-bottom: 10px; }
+      background-repeat: no-repeat; }
     .content__date-block {
       position: absolute;
-      width: 20%;
-      height: 25%;
+      width: 19%;
+      height: 19%;
       top: 0;
       bottom: 0;
       left: 0;
@@ -201,23 +201,13 @@ a {
     .content__date {
       text-align: center;
       font-family: "noto_sansregular";
-      font-size: 18px; }
+      font-size: 18px;
+      line-height: 20px;
+      margin-bottom: -2px; }
     .content__month {
       font-size: 14px;
-      text-align: center; }
-    .content__cur-list {
-      display: block;
-      width: 100%;
-      margin-left: -2%; }
-    .content__cur-item {
-      display: inline-block;
-      box-sizing: border-box;
-      margin-left: 2%;
-      margin-bottom: 2%;
-      width: 22%;
-      height: 22%;
-      position: relative;
-      overflow: hidden; }
+      text-align: center;
+      margin-left: -2px; }
     .content__cur-img {
       display: inline-block;
       background-image: url(../img/sprite/sprite.png);
@@ -225,25 +215,31 @@ a {
       width: 73px;
       height: 48px; }
   .adv {
+    float: left;
     width: 100px;
     height: 80px;
     -webkit-background-size: 100%;
-    background-size: 100%;
+    background-size: 138%;
+    background-position-x: -5px;
+    background-position-y: -43px;
     background-image: url("../img/main/adv320.png"); }
+    .adv__link {
+      float: left;
+      display: block; }
     .adv-wrap {
       width: 100%;
-      height: 90px;
+      height: 80px;
       overflow: hidden;
       position: relative;
       display: block;
       margin-bottom: 4%;
       overflow: hidden; }
     .adv__content {
-      width: 220px;
+      width: 67%;
       display: inline-block;
       font-family: "noto_sansregular";
       font-size: 12px;
-      height: 100%; }
+      float: left; }
     .adv__name {
       color: #bebebe;
       font-size: 10px;
@@ -253,27 +249,41 @@ a {
   .photo {
     width: 100%;
     overflow: hidden; }
-    .photo__data {
+    .photo__list {
+      width: 102%;
+      position: relative;
+      display: block;
+      margin-left: -5px;
+      margin-right: 0;
+      font-size: 0; }
+    .photo__link {
+      width: 100%;
+      height: 100%;
+      display: block; }
+    .photo__date {
       display: inline-block;
       box-sizing: border-box;
       margin-left: 2%;
-      margin-bottom: 2%;
-      width: 30%;
-      height: 30%;
+      margin-bottom: 3%;
+      width: 73px;
+      height: 48px;
       position: relative;
       overflow: hidden;
-      padding: 0 5px; }
-    .photo__list {
-      width: 100%;
-      position: relative;
-      display: block; }
+      padding: 0 5px;
+      text-align: center;
+      background: lightgrey;
+      font-size: 12px; }
+    .photo__arrow {
+      float: right;
+      background-image: url(../img/sprite/sprite.png);
+      background-position: -920px -359px;
+      width: 3px;
+      height: 5px; }
     .photo__item {
       display: inline-block;
       box-sizing: border-box;
-      margin-left: 2%;
-      margin-bottom: 2%;
-      width: 26%;
-      height: 30%;
+      margin-left: 6px;
+      margin-bottom: 5px;
       position: relative;
       overflow: hidden; }
     .photo__img {
@@ -292,15 +302,17 @@ a {
       text-align: left; }
     .pagination__item {
       display: inline-block;
-      height: 50px;
-      width: 50px;
+      height: 34px;
+      width: 34px;
       text-align: center;
-      padding-top: 3%;
+      padding-top: 6px;
       box-sizing: border-box; }
       .pagination__item-active {
         background: #e6e6e6;
-        opacity: 0,8;
-        border-radius: 50%; }
+        opacity: 0,302;
+        border-radius: 50%;
+        width: 34px;
+        height: 34px; }
       .pagination__item-next {
         width: 30%; }
     .pagination__link {

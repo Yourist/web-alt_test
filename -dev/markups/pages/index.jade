@@ -19,9 +19,10 @@ block content
 
     .photo
         ul.photo__list
-            - for (var i = 0; i < 5; i++)
+            - for (var i = 0; i < 6; i++)
                 li.photo__item
-                    img.photo__img
+                    a(src="#").photo__link
+                        img.photo__img
         .adv-wrap
             a.adv__link
                 img.adv
@@ -31,15 +32,21 @@ block content
                     p.adv__desc Открытие новых сервисных центров немецкого автопрома
         ul.photo__list
             li.photo__date
-                h4 20
-                span сентября
+                a(src="#").photo__link
+                    h4 20
+                    span сентября
+                .photo__arrow
                 - for (var i = 0; i < 5; i++)
                     li.photo__item
-                        img.photo__img
+                        a(src="#").photo__link
+                            img.photo__img
 
         ul.photo__list
             li.photo__date
-                h4 20 сентября
+                a(src="#").photo__link
+                    h4 20
+                    span сентября
+                .photo__arrow
             - for (var i = 0; i < 6; i++)
                 li.photo__item
                     img.photo__img

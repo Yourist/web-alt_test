@@ -144,6 +144,9 @@ a {
 .maincontent {
   margin-bottom: 29px; }
 
+span {
+  font-size: 14px; }
+
 /* ------- sections ------- */
 @media (min-width: 320px) and (max-width: 479px) {
   .wrapper {
@@ -218,24 +221,30 @@ a {
     float: left;
     width: 100px;
     height: 80px;
-    -webkit-background-size: 100%;
-    background-size: 138%;
-    background-position-x: -5px;
-    background-position-y: -43px;
+    -webkit-background-size: 159%;
+    background-size: 159%;
+    background-position-x: -4px;
+    background-position-y: -49px;
     background-image: url("../img/main/adv320.png"); }
-    .adv__link {
-      float: left;
-      display: block; }
+    .adv__link-img {
+      display: inline-block;
+      float: left; }
+    .adv__link-text {
+      float: right;
+      display: inline-block;
+      width: 65%; }
     .adv-wrap {
       width: 100%;
       height: 80px;
       overflow: hidden;
       position: relative;
       display: block;
-      margin-bottom: 4%;
-      overflow: hidden; }
+      margin-bottom: 7px;
+      overflow: hidden;
+      background-color: #FFFBD1; }
     .adv__content {
-      width: 67%;
+      width: 100%;
+      height: 80px;
       display: inline-block;
       font-family: "noto_sansregular";
       font-size: 12px;
@@ -243,42 +252,53 @@ a {
     .adv__name {
       color: #bebebe;
       font-size: 10px;
-      display: block; }
+      display: block;
+      padding-left: 10px;
+      padding-top: 6px; }
     .adv__title {
-      display: inline-block; }
+      display: inline-block;
+      padding-left: 10px;
+      padding-top: 1px;
+      font-size: 14px; }
+    .adv__desc {
+      padding-left: 10px; }
   .photo {
     width: 100%;
-    overflow: hidden; }
+    overflow: hidden;
+    margin-bottom: 10px; }
     .photo__list {
       width: 102%;
       position: relative;
       display: block;
       margin-left: -5px;
       margin-right: 0;
+      margin-bottom: 5px;
       font-size: 0; }
     .photo__link {
       width: 100%;
       height: 100%;
       display: block; }
+      .photo__link h4 {
+        height: 20px; }
     .photo__date {
       display: inline-block;
       box-sizing: border-box;
-      margin-left: 2%;
-      margin-bottom: 3%;
-      width: 73px;
-      height: 48px;
+      margin-left: 6px;
+      margin-bottom: 7px;
+      width: 71px;
+      height: 49px;
       position: relative;
       overflow: hidden;
-      padding: 0 5px;
+      padding: 8px 6px 0 4px;
       text-align: center;
-      background: lightgrey;
       font-size: 12px; }
     .photo__arrow {
       float: right;
       background-image: url(../img/sprite/sprite.png);
       background-position: -920px -359px;
       width: 3px;
-      height: 5px; }
+      height: 5px;
+      margin-top: -28px; }
     .photo__item {
       display: inline-block;
       box-sizing: border-box;
@@ -302,22 +322,27 @@ a {
       text-align: left; }
     .pagination__item {
       display: inline-block;
-      height: 34px;
-      width: 34px;
+      width: 30px;
+      height: 30px;
       text-align: center;
-      padding-top: 6px;
+      padding-top: 7px;
+      padding-left: 1px;
       box-sizing: border-box; }
       .pagination__item-active {
         background: #e6e6e6;
         opacity: 0,302;
         border-radius: 50%;
-        width: 34px;
-        height: 34px; }
+        width: 33px;
+        height: 33px; }
       .pagination__item-next {
-        width: 30%; }
+        width: 33%;
+        padding-left: 21px; }
     .pagination__link {
       color: #000000;
-      display: block; } }
+      display: block;
+      font-size: 14px;
+      width: 100%;
+      height: 100%; } }
 
 @media (min-width: 480px) and (max-width: 767px) {
   .wrapper {

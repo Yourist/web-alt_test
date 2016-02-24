@@ -57,9 +57,6 @@
       margin: 7px;
       padding:7px 10px;
       text-align: center;
-      //-webkit-box-sizing: border-box;
-      //-moz-box-sizing: border-box;
-      //box-sizing: border-box;
       display: inline-block;
     }
     &__date {
@@ -80,10 +77,22 @@
     }
   }
   .adv {
-
-    &__link{
+    float: left;
+    width: 100px;
+    height: 80px;
+    -webkit-background-size: 159%;
+    background-size: 159%;
+    background-position-x: -4px;
+    background-position-y: -49px;
+    background-image: url("../img/main/adv320.png");
+    &__link-img{
+      display: inline-block;
       float: left;
-      display: block;
+    }
+    &__link-text{
+      float: right;
+      display: inline-block;
+      width: 65%;
     }
 
     &-wrap {
@@ -92,72 +101,78 @@
       overflow: hidden;
       position: relative;
       display: block;
-      margin-bottom: 4%;
+      margin-bottom: 7px;
       overflow: hidden;
+      background-color: #FFFBD1;
     }
-    float: left;
-    width: 100px;
-    height: 80px;
-    -webkit-background-size: 100%;
-    background-size: 138%;
-    background-position-x: -5px;
-    background-position-y: -43px;
-    background-image: url("../img/main/adv320.png");
+
     &__content{
-      width: 67%;
+      width: 100%;
+      height: 80px;
       display: inline-block;
       font-family:$noto-sans-r;
       font-size:12px;
       float: left;
+
     }
     &__name{
       color: #bebebe;
       font-size:10px;
       display: block;
+      padding-left: 10px;
+      padding-top: 6px;
     }
     &__title{
       display: inline-block;
-
+      padding-left: 10px;
+      padding-top: 1px;
+      font-size: 14px;
     }
-
+    &__desc{
+      padding-left: 10px;
+    }
   }
 
   .photo {
     width: 100%;
     overflow: hidden;
-
+    margin-bottom: 10px;
     &__list {
       width: 102%;
       position: relative;
       display: block;
       margin-left: -5px;
       margin-right: 0;
+      margin-bottom: 5px;
       font-size:0;
     }
     &__link{
       width: 100%;
       height: 100%;
       display: block;
+      & h4{
+        height:20px;
+      }
     }
 
     &__date {
       display: inline-block;
       box-sizing: border-box;
-      margin-left: 2%;
-      margin-bottom: 3%;
-      width: 73px;
-      height: 48px;
+      margin-left: 6px;
+      margin-bottom: 7px;
+      width: 71px;
+      height: 49px;
       position: relative;
       overflow: hidden;
-      padding:0 5px;
+      padding: 8px 6px 0 4px;
       text-align: center;
-      background: lightgrey;
       font-size:12px;
 
     }
     &__arrow{
       float: right;
       @include sprite($arrow);
+      margin-top: -28px;
     }
     &__item {
       display: inline-block;
@@ -185,26 +200,30 @@
     }
     &__item{
       display: inline-block;
-      height: 34px;
-      width: 34px;
+      width: 30px;
+      height: 30px;
       text-align: center;
-      padding-top: 6px;
+      padding-top: 7px;
+      padding-left: 1px;
       box-sizing: border-box;
       &-active{
         background: #e6e6e6;
         opacity: 0,302;
         border-radius: 50%;
-        width: 34px;
-        height: 34px;
+        width: 33px;
+        height: 33px;
       }
       &-next{
-        width: 30%;
+        width: 33%;
+        padding-left: 21px;
       }
     }
     &__link{
       color: #000000;
       display: block;
-
+      font-size: 14px;
+      width: 100%;
+      height: 100%;
     }
   }
 }

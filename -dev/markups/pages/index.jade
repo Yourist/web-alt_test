@@ -24,9 +24,9 @@ block content
                     a(src="#").photo__link
                         img.photo__img
         .adv-wrap
-            a.adv__link
+            a.adv__link.adv__link-img
                 img.adv
-                a.
+            a.adv__link.adv__link-text
                 .adv__content
                     .adv__name Рекламный тизер
                     h5.adv__title Театральная паутина
@@ -41,11 +41,9 @@ block content
                     li.photo__item
                         a(src="#").photo__link
                             img.photo__img
-
-        ul.photo__list
             li.photo__date
                 a(src="#").photo__link
-                    h4 20
+                    h4 19
                     span сентября
                 .photo__arrow
             - for (var i = 0; i < 6; i++)
@@ -55,7 +53,7 @@ block content
         .pagination
             span.pagination__pages Страницы:
             ul.pagination__list
-                - for(var i = 1; i < 4; i++)
+                - for(var i = 1; i < 5; i++)
                     if (i!=1)
                         li.pagination__item
                             a(href="#").pagination__link=i

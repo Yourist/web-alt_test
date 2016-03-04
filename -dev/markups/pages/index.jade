@@ -12,43 +12,118 @@ block content
 
     article.content
         .content__face
-            img.content__face-img
+            a(href="#").content__face-img
+            .content__remark
+                .content__description Мельницы маленькой деревушки Brandmill близи курортного австрийского города Mayerhoffen.
+                .content__autor Фото: Reuters
             .content__date-block
                 h3.content__date 21
                 span.content__month сентября
 
     .photo
-        ul.photo__list
+        .adv-middle
+            a(href="#").adv-middle__link
+                .adv-middle__link-img
+
+        // small and middle block
+        ul.photo__list.photo__list-cur
             - for (var i = 0; i < 6; i++)
                 li.photo__item
-                    a(src="#").photo__link
+                    a(href="#").photo__link
                         img.photo__img
-        .adv-wrap
-            a.adv__link.adv__link-img
-                img.adv
-            a.adv__link.adv__link-text
+        .adv-small
+            a(href="#").adv__link.adv__link-img
+                img.adv__img
+            a(href="#").adv__link.adv__link-text
                 .adv__content
                     .adv__name Рекламный тизер
                     h5.adv__title Театральная паутина
                     p.adv__desc Открытие новых сервисных центров немецкого автопрома
-        ul.photo__list
+        ul.photo__list.photo__list-first
             li.photo__date
-                a(src="#").photo__link
+                a(href="#").photo__link
                     h4 20
                     span сентября
                 .photo__arrow
-                - for (var i = 0; i < 5; i++)
+                - for (var i = 0; i < 6; i++)
                     li.photo__item
-                        a(src="#").photo__link
+                        a(href="#").photo__link
                             img.photo__img
             li.photo__date
-                a(src="#").photo__link
+                a(href="#").photo__link
                     h4 19
                     span сентября
                 .photo__arrow
             - for (var i = 0; i < 6; i++)
                 li.photo__item
                     img.photo__img
+            li.photo__date.photo__item-hidden
+                a(href="#").photo__link
+                    h4 18
+                    span сентября
+                .photo__arrow
+            - for (var i = 0; i < 3; i++)
+                li.photo__item.photo__item-hidden
+                    img.photo__img
+            li.photo__date.photo__item-hidden
+                a(href="#").photo__link
+                    h4 17
+                    span сентября
+                .photo__arrow
+            - for (var i = 0; i < 1; i++)
+                li.photo__item.photo__item-hidden
+                    a(href="#").photo__link
+                        img.photo__img
+
+
+        // big block
+        ul.photo__list.photo__list-big
+            - for (var i = 0; i < 4; i++)
+                li.photo__item
+                    a(href="#").photo__link
+                        img.photo__img
+            li.photo__date
+                a(src="#").photo__link
+                    h4 20
+                    span сентября
+                .photo__arrow
+
+            - for (var i = 0; i < 5; i++)
+                li.photo__item
+                    a(href="#").photo__link
+                        img.photo__img
+            li.photo__date
+                a(href="#").photo__link
+                    h4 19
+                    span сентября
+                .photo__arrow
+
+            - for (var i = 0; i < 4; i++)
+                li.photo__item
+                    a(href="#").photo__link.photo__img link
+            .adv-big
+                a.adv-big__link
+                    .adv-big__link-img
+            li.photo__date.photo__item-hidden
+                a(href="#").photo__link
+                    h4 18
+                    span сентября
+                .photo__arrow
+            - for (var i = 0; i < 5; i++)
+                li.photo__item.photo__item-hidden
+                    a(href="#").photo__link
+                        img.photo__img
+            li.photo__date.photo__item-hidden
+                a(href="#").photo__link
+                    h4 17
+                    span сентября
+                .photo__arrow
+            - for (var i = 0; i < 4; i++)
+                li.photo__item.photo__item-hidden
+                    a(href="#").photo__link
+                        img.photo__img
+
+
     footer.footer
         .pagination
             span.pagination__pages Страницы:

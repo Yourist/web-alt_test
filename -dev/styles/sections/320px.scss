@@ -1,9 +1,9 @@
 @media (min-width: 320px) and (max-width: 479px) {
   .wrapper {
     padding: 5px;
+    padding-right: 7px;
     background: #ffffff;
   }
-
   .header {
     width: 100%;
     margin-bottom: 10px;
@@ -25,7 +25,6 @@
       margin-top: 26px;
     }
   }
-
   .content {
     min-width: 310px;
     min-height: 200px;
@@ -61,7 +60,7 @@
     }
     &__date {
       text-align: center;
-      font-family: $noto-sans-r;
+
       font-size: 18px;
       line-height:20px;
       margin-bottom:-2px;
@@ -75,16 +74,21 @@
       display: inline-block;
       @include sprite($s320);
     }
+    .content__remark{
+      display:none;
+    }
   }
   .adv {
-    float: left;
-    width: 100px;
-    height: 80px;
-    -webkit-background-size: 159%;
-    background-size: 159%;
-    background-position-x: -4px;
-    background-position-y: -49px;
-    background-image: url("../img/main/adv320.png");
+    &__img {
+      float: left;
+      width: 100px;
+      height: 80px;
+      -webkit-background-size: 159%;
+      background-size: 159%;
+      background-position-x: -4px;
+      background-position-y: -49px;
+      background-image: url("../img/main/adv320.png");
+    }
     &__link-img{
       display: inline-block;
       float: left;
@@ -95,17 +99,19 @@
       width: 65%;
     }
 
-    &-wrap {
+    &-small {
       width: 100%;
       height: 80px;
       overflow: hidden;
       position: relative;
       display: block;
-      margin-bottom: 7px;
+      margin-bottom: 9px;
       overflow: hidden;
       background-color: #FFFBD1;
     }
-
+    &-middle{
+      display:none;
+    }
     &__content{
       width: 100%;
       height: 80px;
@@ -132,7 +138,6 @@
       padding-left: 10px;
     }
   }
-
   .photo {
     width: 100%;
     overflow: hidden;
@@ -143,15 +148,21 @@
       display: block;
       margin-left: -5px;
       margin-right: 0;
-      margin-bottom: 5px;
+      margin-bottom: 3px;
       font-size:0;
+
+      &-big{
+        display: none;
+      }
     }
     &__link{
       width: 100%;
       height: 100%;
       display: block;
+      color: #000;
+
       & h4{
-        height:20px;
+        height:21px;
       }
     }
 
@@ -160,11 +171,11 @@
       box-sizing: border-box;
       margin-left: 6px;
       margin-bottom: 7px;
-      width: 71px;
-      height: 49px;
+      width: 73px;
+      height: 48px;
       position: relative;
       overflow: hidden;
-      padding: 8px 6px 0 4px;
+      padding: 5px 5px 0 0px;
       text-align: center;
       font-size:12px;
 
@@ -172,16 +183,25 @@
     &__arrow{
       float: right;
       @include sprite($arrow);
-      margin-top: -28px;
+      margin-top: -32px;
+      margin-right: 4px;
     }
     &__item {
       display: inline-block;
       box-sizing: border-box;
       margin-left: 6px;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
       position: relative;
       overflow: hidden;
+      &-hidden{
+        display:none;
+      }
+      &:nth-child(7){
+        display: none;
+      }
     }
+
+
     &__img {
       display: inline-block;
       @include sprite($r320);

@@ -90,6 +90,9 @@ body {
   padding: 0;
   margin: 0; }
 
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
 .container {
   margin: 0 auto;
   position: relative;
@@ -162,7 +165,7 @@ span {
     .header:after {
       clear: both; }
     .header__title {
-      float: left;
+      display: inline-block;
       margin: 0;
       padding: 0;
       font-size: 26px;
@@ -370,7 +373,7 @@ span {
     .header:after {
       clear: both; }
     .header__title {
-      float: left;
+      display: inline-block;
       margin: 0;
       padding: 0;
       font-size: 40px;
@@ -543,11 +546,11 @@ span {
     .header:after {
       clear: both; }
     .header__title {
-      float: left;
+      font-family: "playfair_displayregular";
       margin: 0;
       padding: 0;
       font-size: 40px;
-      font-family: "playfair_displayregular"; }
+      display: inline-block; }
     .header .horizontal-line {
       float: right;
       width: 60%;
@@ -560,8 +563,8 @@ span {
     .content__face {
       position: relative; }
     .content__face-img {
-      display: inline-block;
       position: relative;
+      display: inline-block;
       height: 455px;
       width: 100%;
       background-image: url("../img/main/main768.png");

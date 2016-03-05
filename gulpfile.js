@@ -18,6 +18,7 @@ var
 		build:{//файлы для выгрузки
 			html:        'dist/',
 			js:	         'dist/js',
+			vendorstop:  'dist/js/vendors/top',
 			css:         'dist/styles',
 			img:         'dist/img/main',
 			sprite:      'dist/img/sprite',
@@ -26,7 +27,8 @@ var
 		},
 		dev:{//исходники
 			jade:      '-dev/markups/pages/*.jade',
-			js:        '-dev/js/**/*.js',
+			js:        ['-dev/js/**/*.js','!-dev/js/vendors/top/**/*.js'],
+			vendorstop:'-dev/js/vendors/top/**/*.js',
 			style:     '-dev/styles/main.scss',
 			sprite:    '-dev/img/sprite/**/*.*',
 			img:       '-dev/img/main/**/*.*',
@@ -88,6 +90,13 @@ gulp.task('scripts', function() {
 		.pipe(uglify())
 		.pipe(gulp.dest(paths.build.js));
 });
+gulp.task('vendorstop', function() {
+	return gulp.src(paths.dev.vendorstop)
+		.pipe(plumber())
+		.pipe(concat('top.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest(paths.build.vendorstop));
+});
 /* --------- sprites --------- */
 gulp.task('sprite', function () {
 	var spriteData = gulp.src(paths.dev.sprite)
@@ -113,4 +122,4 @@ gulp.task('clean', function() {
 });
 /* --------- default --------- */
 
-gulp.task('default', ['jade','other','sass','sync','scripts','sprite', 'watch']);
+gulp.task('default', ['jade','other','sass','sync','scripts','vendorstop','sprite', 'watch']);
